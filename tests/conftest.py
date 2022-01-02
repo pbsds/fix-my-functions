@@ -5,7 +5,7 @@ import pytest
 
 def pytest_addoption(parser):
     parser.addoption("--set-expected", action="store_true",
-        help="Write the current output from the tests in test/cases to test/expected")
+        help="Write the epected output for the tests into fixtures/formattin_expected")
 
 def pytest_generate_tests(metafunc):
     if "set_expected" in metafunc.fixturenames:
