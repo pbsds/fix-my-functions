@@ -1,5 +1,4 @@
 from .config import CONFIG
-from redbaron import nodes
 from .helpers import is_self_arg, make_comma, make_whitespace, make_multiline_comment
 from .helpers import elementwise_max
 from .helpers import debug1, debug2, debug3, debug4
@@ -8,9 +7,10 @@ from typing import Callable, Optional
 import json
 
 
+FormattingPass      = Callable[[RedBaron, ...], RedBaron]
 InteractiveCallable = Optional[Callable[[RedBaron], bool]]
 
-FORMATTING_PASSES = []
+FORMATTING_PASSES: list[FormattingPass] = []
 def _formatting_pass(func):
     FORMATTING_PASSES.append(func)
     return func
@@ -218,8 +218,6 @@ def tabulate_function_definitions(red: RedBaron, *, interactive: InteractiveCall
                     node.replace(backup_node)
 
     return red
-
-
 
 
 # TODO: def tabulate_function_calls
