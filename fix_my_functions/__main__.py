@@ -10,9 +10,9 @@ import argparse
 __doc__ = """
 Possible invocations:
 
-    fix_my_functions
+    fix-my-functions
     python -m fix_my_functions
-    poetry run fix_my_functions
+    poetry run fix-my-functions
     poetry run python -m fix_my_functions
 """
 

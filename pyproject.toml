@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fix_my_functions"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Peder Bergebakken Sundt <pbsds@hotmail.com>"]
 
@@ -15,7 +15,7 @@ pdoc3 = ">=0.10.0"
 pytest = ">=6.2.5"
 
 [tool.poetry.scripts]
-fix_my_functions  = 'fix_my_functions.__main__:main'
+fix-my-functions  = 'fix_my_functions.__main__:main'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
