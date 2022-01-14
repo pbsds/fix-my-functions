@@ -1,10 +1,8 @@
-# fix-my-functions
-
-Working title.
+# [fix-my-functions](https://pypi.org/project/fix-my-functions/)
 
 A Python code formatter which applies a single transform: function signature tabulation. A formatting style designed to read type annotations with ease. Based on [`redbaron`](https://github.com/PyCQA/redbaron), which in turn wraps the [`baron`](https://github.com/PyCQA/baron) parser.
 
-    pip install git+https://github.com/pbsds/fix-my-functions.git#main
+    pip install fix-my-functions
     fix-my-functions --help
 
 It formats functions to look like this:

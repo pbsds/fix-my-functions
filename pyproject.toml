@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "fix_my_functions"
-version = "0.1.1"
+name = "fix-my-functions"
+version = "0.1.2"
 description = ""
 authors = ["Peder Bergebakken Sundt <pbsds@hotmail.com>"]
 
