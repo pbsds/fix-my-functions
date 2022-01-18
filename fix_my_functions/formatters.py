@@ -20,9 +20,7 @@ def _formatting_pass(func):
 @_formatting_pass
 def tabulate_function_definitions(red: RedBaron, *, interactive: InteractiveCallable) -> RedBaron:
     for i, node in enumerate(red.find_all("def")):
-        if interactive:
-            backup_node = node.copy()
-            backup_src = node.dumps()
+        backup_node = node.copy()
 
         #debug1(node)
 
@@ -209,10 +207,12 @@ def tabulate_function_definitions(red: RedBaron, *, interactive: InteractiveCall
                 node.sixth_formatting.extend(
                     make_multiline_comments(def_comment_nodes_tail, lead, sep, indent_args)
                 )
+        else:
+            node.replace(backup_node)
+            continue
 
         if interactive:
-            new_src = node.dumps()
-            if new_src != backup_src:
+            if node.dumps() != backup_node.dumps():
                 if not interactive(red):
                     # rollback
                     node.replace(backup_node)
