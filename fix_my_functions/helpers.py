@@ -39,10 +39,10 @@ def make_whitespace(value) -> Union[nodes.SpaceNode, nodes.EndlNode]:
             "value" :  indent,
         })
 
-def make_multiline_comment(comment_nodes: list[nodes.CommentNode], whitespace_head: str, whitespace_sep: str, whitespace_tail: str) -> Iterable[nodes.Node]:
+def make_multiline_comments(comment_nodes: list[nodes.CommentNode], whitespace_head: str, whitespace_sep: str, whitespace_tail: str) -> Iterable[nodes.Node]:
     yield make_whitespace(whitespace_head)
     for i, comment_node in enumerate(comment_nodes):
-        if i:
+        if i != 0:
             yield make_whitespace(whitespace_sep)
         yield comment_node
     yield make_whitespace(whitespace_tail)

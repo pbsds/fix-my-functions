@@ -1,5 +1,5 @@
 from .config import CONFIG
-from .helpers import is_self_arg, make_comma, make_whitespace, make_multiline_comment
+from .helpers import is_self_arg, make_comma, make_whitespace, make_multiline_comments
 from .helpers import elementwise_max
 from .helpers import debug1, debug2, debug3, debug4
 from redbaron import RedBaron
@@ -189,7 +189,7 @@ def tabulate_function_definitions(red: RedBaron, *, interactive: InteractiveCall
 
                     comma_node.second_formatting.clear()
                     comma_node.second_formatting.extend(
-                        make_multiline_comment(comment_nodes, lead, sep, indent_args)
+                        make_multiline_comments(comment_nodes, lead, sep, indent_args)
                     )
                 else:
                     comma_node.second_formatting = indent_args
@@ -207,7 +207,7 @@ def tabulate_function_definitions(red: RedBaron, *, interactive: InteractiveCall
 
                 #node.sixth_formatting.clear()
                 node.sixth_formatting.extend(
-                    make_multiline_comment(def_comment_nodes_tail, lead, sep, indent_args)
+                    make_multiline_comments(def_comment_nodes_tail, lead, sep, indent_args)
                 )
 
         if interactive:
